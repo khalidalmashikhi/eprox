@@ -1,0 +1,343 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ *
+ * EPROX design tokens
+ * Brand burgundy sampled directly from the logo: #540A09
+ * ------------------------------------------------------------------ */
+:root {
+  --background: #ffffff;
+  --surface: #f5f4f1;
+  --surface-2: #efeee9;
+  --surface-soft: #faf9f8;
+  --ink: #151311;
+  --text: #101010;
+  --muted: #666666;
+  --faint: #8a8a8a;
+  --border: rgba(15, 15, 15, 0.09);
+  --border-strong: rgba(15, 15, 15, 0.16);
+
+  --brand: #6e1013;
+  --brand-deep: #540a09;
+  --brand-strong: #7d1418;
+  --brand-soft: #f7ecec;
+  --brand-wash: #faf1f0;
+  --brand-tint: rgba(84, 10, 9, 0.06);
+
+  --shadow-sm: 0 1px 2px rgba(16, 16, 16, 0.04), 0 2px 8px rgba(16, 16, 16, 0.04);
+  --shadow-md: 0 10px 34px rgba(16, 16, 16, 0.09);
+  --shadow-lg: 0 30px 70px rgba(16, 16, 16, 0.13);
+  --shadow-brand: 0 24px 60px rgba(84, 10, 9, 0.18);
+
+  --nav-h: 94px;
+}
+
+/* Map tokens into Tailwind's theme so utilities like text-brand work. */
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-soft: var(--surface-soft);
+  --color-ink: var(--ink);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-border: var(--border);
+  --color-brand: var(--brand);
+  --color-brand-deep: var(--brand-deep);
+  --color-brand-strong: var(--brand-strong);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-wash: var(--brand-wash);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-h);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: var(--font-latin), var(--font-arabic), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Arabic (RTL) gets the Arabic font stack first. */
+:lang(ar),
+[dir="rtl"] body,
+[dir="rtl"] {
+  font-family: var(--font-arabic), system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--brand);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ------------------------------------------------------------------ *
+ * Component classes live in the `components` layer so that Tailwind
+ * utilities (e.g. hidden, justify-between, text-*) always win over them.
+ * Typography scale — editorial, responsive via clamp()
+ * ------------------------------------------------------------------ */
+@layer components {
+.text-display {
+  font-size: clamp(3.2rem, 4.8vw, 5rem);
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+}
+[dir="rtl"] .text-display {
+  line-height: 1.2;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+
+/* Signature statement — its own clamp + generous leading so long Arabic
+ * lines are never clipped at 90% / 100% / 125% zoom. */
+.signature-title {
+  font-size: clamp(2rem, 5vw, 4.25rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+[dir="rtl"] .signature-title {
+  line-height: 1.5;
+  letter-spacing: 0;
+  font-weight: 700;
+  padding-block: 0.12em;
+}
+
+.text-h2 {
+  font-size: clamp(2rem, 4.2vw, 3.5rem);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+}
+[dir="rtl"] .text-h2 {
+  line-height: 1.28;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+
+/* Editorial page-hero title — between h2 and the homepage display size. */
+.text-page-title {
+  font-size: clamp(2.6rem, 4.6vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.028em;
+  font-weight: 600;
+}
+[dir="rtl"] .text-page-title {
+  line-height: 1.22;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+
+.text-h3 {
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+[dir="rtl"] .text-h3 {
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+.text-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brand);
+}
+[dir="rtl"] .text-eyebrow {
+  letter-spacing: 0.04em;
+  text-transform: none;
+  font-size: 0.85rem;
+}
+
+.text-lead {
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+  line-height: 1.6;
+  color: var(--muted);
+}
+[dir="rtl"] .text-lead {
+  line-height: 1.9;
+}
+
+.text-body {
+  line-height: 1.7;
+  color: var(--muted);
+}
+[dir="rtl"] .text-body {
+  line-height: 2;
+}
+
+/* ------------------------------------------------------------------ *
+ * Layout helpers
+ * ------------------------------------------------------------------ */
+.container-x {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 3rem);
+}
+
+.section-y {
+  padding-block: clamp(2.75rem, 5vw, 5rem);
+}
+
+.hairline {
+  height: 1px;
+  width: 100%;
+  background: var(--border);
+}
+
+/* A soft eyebrow tag used to head sections. */
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--background);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Card that lifts and deepens its shadow on hover. */
+.card-lift {
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease;
+  will-change: transform;
+}
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* A fine technical grid used behind several sections. */
+.tech-grid {
+  background-image:
+    linear-gradient(to right, var(--border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, #000 40%, transparent 100%);
+  mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, #000 40%, transparent 100%);
+}
+
+/* Buttons -------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 550;
+  font-size: 0.95rem;
+  line-height: 1;
+  padding: 0.9rem 1.5rem;
+  border-radius: 999px;
+  min-height: 48px;
+  transition:
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+  will-change: transform;
+}
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primary {
+  background: var(--brand-deep);
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(84, 10, 9, 0.22);
+}
+.btn-primary:hover {
+  background: var(--brand);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(84, 10, 9, 0.28);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+}
+.btn-secondary:hover {
+  border-color: var(--text);
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.btn-ghost:hover {
+  background: #fff;
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-sm);
+}
+} /* end @layer components */
+
+/* Subtle animated conic ring used in visuals */
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes dash-move {
+  to {
+    stroke-dashoffset: -240;
+  }
+}
+
+.animate-float-y {
+  animation: float-y 7s ease-in-out infinite;
+}
+
+/* ------------------------------------------------------------------ *
+ * Reduced motion
+ * ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .animate-float-y {
+    animation: none !important;
+  }
+}
