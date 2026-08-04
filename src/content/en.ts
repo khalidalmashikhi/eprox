@@ -17,10 +17,10 @@ export const en: Dictionary = {
   },
   hero: {
     eyebrow: "Mobile Parts · Repair · Wholesale",
-    titleLine1: "Behind every great device…",
-    titleLine2: "is a great part.",
+    titleLine1: "Chosen…",
+    titleLine2: "to Last.",
     description:
-      "High-quality mobile phone spare parts, precise diagnostics, professional repair, and dependable supply solutions for repair centers and retailers.",
+      "We carefully select premium mobile spare parts, provide professional repair services, and deliver reliable wholesale solutions—because lasting quality begins with the right choice.",
     primaryCta: "Explore Spare Parts",
     secondaryCta: "Contact Us",
     microline: "Carefully Selected Parts · Precise Diagnostics · Professional Workmanship",
