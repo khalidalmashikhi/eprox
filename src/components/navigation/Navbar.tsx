@@ -49,11 +49,6 @@ export function Navbar({ dict, locale }: NavbarProps) {
     };
   }, [open]);
 
-  // Close the mobile menu whenever the route changes.
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
-
   const switchLanguage = useCallback(() => {
     const hash = typeof window !== "undefined" ? window.location.hash : "";
     const base = pathname.replace(/^\/(ar|en)/, `/${other}`);

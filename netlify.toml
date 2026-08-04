@@ -1,0 +1,11 @@
+[build]
+  command = "npm run build"
+
+[build.environment]
+  # Next.js 16 requires Node >= 20.9
+  NODE_VERSION = "20"
+
+# The official Netlify Next.js plugin manages the deploy (runtime, functions,
+# and the .next output). Do not set `publish = ".next"` manually.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
