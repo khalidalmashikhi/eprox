@@ -41,53 +41,78 @@ export default async function AboutPage({
         intro={p.intro}
       />
 
-      {/* quote moment */}
-      <section className="border-b border-border bg-surface">
+      {/* Who We Are — the company today */}
+      <section className="section-y">
         <div className="container-x">
-          <div className="mx-auto max-w-4xl py-16 text-center sm:py-20">
-            <Reveal>
-              <span className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-brand-soft text-2xl font-bold text-brand-deep">
-                &ldquo;
-              </span>
-            </Reveal>
-            <Reveal delay={0.05}>
-              <p className="text-h3 mt-6 text-text">{p.quote}</p>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <p className="mt-5 text-[0.8rem] font-semibold uppercase tracking-[0.18em] text-brand rtl:tracking-normal">
-                {p.quoteAuthor}
-              </p>
-            </Reveal>
+          <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+            <div className="lg:sticky lg:top-28 lg:self-start">
+              <SectionHeading eyebrow={p.storyEyebrow} title={p.storyTitle} />
+            </div>
+            <div className="max-w-2xl space-y-5">
+              {p.storyParagraphs.map((para, i) => (
+                <Reveal key={i} delay={i * 0.06}>
+                  <p className="text-lead text-text/85">{para}</p>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* principle blocks — editorial list */}
-      <section className="section-y">
+      {/* Our Mission */}
+      <section className="section-y border-y border-border bg-surface">
         <div className="container-x">
-          <SectionHeading eyebrow={p.blocksEyebrow} title={p.blocksTitle} />
-          <div className="mt-10 border-t border-border">
-            {p.blocks.map((b, i) => (
-              <Reveal
-                key={b.label}
-                delay={0.03 * i}
-                as="div"
-                className="group grid items-start gap-4 border-b border-border py-9 lg:grid-cols-[0.38fr_0.62fr] lg:gap-10"
-              >
-                <div className="flex items-baseline gap-4">
-                  <span className="text-sm font-bold tabular-nums text-brand">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="text-[0.78rem] font-semibold uppercase tracking-[0.16em] text-faint rtl:tracking-normal rtl:text-[0.95rem]">
-                    {b.label}
-                  </span>
-                </div>
-                <div className="max-w-2xl">
-                  <h3 className="text-h3 text-text transition-colors duration-300 group-hover:text-brand-deep">
-                    {b.title}
-                  </h3>
-                  <p className="text-lead mt-3">{b.text}</p>
-                </div>
+          <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+            <div className="lg:sticky lg:top-28 lg:self-start">
+              <SectionHeading eyebrow={p.missionEyebrow} title={p.missionTitle} />
+            </div>
+            <div className="max-w-2xl space-y-5">
+              {p.missionParagraphs.map((para, i) => (
+                <Reveal key={i} delay={i * 0.06}>
+                  <p className="text-lead text-text/85">{para}</p>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Vision — future ambition, given stronger presence */}
+      <section className="relative overflow-hidden bg-brand-deep text-white">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.14]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px)",
+            backgroundSize: "64px 64px",
+            maskImage: "radial-gradient(90% 80% at 50% 30%, #000 30%, transparent 100%)",
+            WebkitMaskImage: "radial-gradient(90% 80% at 50% 30%, #000 30%, transparent 100%)",
+          }}
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute -bottom-1/3 start-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full opacity-40 blur-3xl rtl:translate-x-1/2"
+          style={{ background: "radial-gradient(circle, rgba(125,20,24,0.9), transparent 60%)" }}
+          aria-hidden
+        />
+        <div className="container-x relative section-y">
+          <div className="max-w-3xl">
+            <Reveal>
+              <span className="inline-flex items-center gap-2 text-[0.75rem] font-semibold uppercase tracking-[0.2em] text-white/60 rtl:tracking-[0.06em]">
+                <span className="h-1.5 w-1.5 rounded-full bg-white/70" />
+                {p.visionEyebrow}
+              </span>
+            </Reveal>
+            <Reveal delay={0.05}>
+              <h2 className="signature-title mt-6 text-white">{p.visionTitle}</h2>
+            </Reveal>
+          </div>
+          <div className="mt-10 grid max-w-4xl gap-6 md:grid-cols-1">
+            {p.visionParagraphs.map((para, i) => (
+              <Reveal key={i} delay={0.1 + i * 0.06}>
+                <p className="border-s-2 border-white/25 ps-6 text-[1.1rem] leading-relaxed text-white/80">
+                  {para}
+                </p>
               </Reveal>
             ))}
           </div>

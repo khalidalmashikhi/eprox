@@ -20,7 +20,7 @@ export const en: Dictionary = {
     titleLine1: "Chosen…",
     titleLine2: "to Last.",
     description:
-      "We carefully select premium mobile spare parts, provide professional repair services, and deliver reliable wholesale solutions—because lasting quality begins with the right choice.",
+      "Genuine spare parts and carefully selected high-quality alternatives, professional repair tools, expert repair services, and supply solutions for technicians, service centers, and retailers.",
     primaryCta: "Explore Spare Parts",
     secondaryCta: "Contact Us",
     microline: "Carefully Selected Parts · Precise Diagnostics · Professional Workmanship",
@@ -36,11 +36,11 @@ export const en: Dictionary = {
   about: {
     eyebrow: "About EPROX",
     heading: "More Than Repair.",
-    body: "At EPROX we start with the right part, continue with precise diagnostics and professional workmanship, and finish with a device that works as it should. We combine high-quality components, technical expertise, and attention to detail at every step — so you get a result you can trust.",
+    body: "EPROX specializes in the mobile phone and smart-device repair ecosystem — genuine spare parts, carefully selected high-quality alternatives, professional repair tools, and technical expertise. We choose our products around what technicians, service centers, and retailers actually need, with a focus on quality, precise selection, and professional service.",
     points: [
-      { label: "Selection", text: "Parts chosen against clear quality standards." },
-      { label: "Diagnosis", text: "An accurate reading of the fault before any action." },
-      { label: "Execution", text: "Professional work that respects every device." },
+      { label: "Selection", text: "Genuine parts and quality alternatives, chosen against clear standards." },
+      { label: "Expertise", text: "Hands-on experience with mobile hardware and repair." },
+      { label: "Supply", text: "Parts, tools, and solutions for the repair industry." },
     ],
   },
   services: {
@@ -77,7 +77,7 @@ export const en: Dictionary = {
     eyebrow: "Spare Parts",
     heading: "Every component in its place.",
     intro:
-      "An organized selection of essential parts and accessories, chosen to fit a wide range of devices.",
+      "Genuine spare parts and carefully selected high-quality alternatives — displays, batteries, cameras, and the internal components a repair actually needs.",
     categories: [
       { title: "Displays", description: "High-quality panels with accurate color and clarity." },
       { title: "Batteries", description: "Dependable cells that hold steady performance." },
@@ -86,7 +86,7 @@ export const en: Dictionary = {
       { title: "Internal Components", description: "Speakers, buttons, and precise flex connectors." },
       { title: "Repair Tools & Accessories", description: "Tools that support clean, precise work." },
     ],
-    brandsLabel: "We supply parts that fit devices across many brands",
+    brandsLabel: "Compatible with devices from a wide range of brands",
     brands: [
       "Apple",
       "Samsung",
@@ -119,17 +119,25 @@ export const en: Dictionary = {
   },
   why: {
     eyebrow: "Why EPROX",
-    heading: "The difference is in the detail.",
-    statement: "Quality is not a single step — it is a decision repeated at every stage of your device's journey.",
-    primary: [
-      { title: "Selected Quality", text: "Parts held to clear selection standards before they reach you." },
-      { title: "Precise Diagnostics", text: "We identify the fault accurately before any action — no surprises." },
-      { title: "Professional Execution", text: "Skilled hands that carry out the work with care and precision." },
-    ],
-    supporting: [
-      { title: "Transparent Service", text: "An honest explanation of every step and cost." },
-      { title: "Efficient Turnaround", text: "Respect for your time, without cutting corners." },
-      { title: "After-Service Support", text: "Follow-up that keeps your mind at ease." },
+    heading: "The EPROX advantage.",
+    statement: "Clear options, professional tools, careful selection, and real repair expertise — what stands behind every part we supply.",
+    pillars: [
+      {
+        title: "Genuine Parts & Quality Alternatives",
+        text: "Genuine spare parts alongside carefully selected high-quality alternatives, giving technicians and service centers clear options for different repair requirements.",
+      },
+      {
+        title: "Professional Repair Tools",
+        text: "Professional-grade repair tools and supplies chosen around the practical needs of technicians and service centers — from precision tools to specialized workshop equipment.",
+      },
+      {
+        title: "Quality-Driven Selection",
+        text: "Products are evaluated against defined standards for quality, performance, and reliability before becoming part of our offering.",
+      },
+      {
+        title: "Hands-On Technical Expertise",
+        text: "Practical experience in mobile hardware and repair gives us a real understanding of technicians' needs — and helps us match the right options to each job.",
+      },
     ],
   },
   signature: {
@@ -163,8 +171,8 @@ export const en: Dictionary = {
     builtLine: "للحلول الفنية والتقنية",
   },
   meta: {
-    title: "EPROX | Premium Mobile Parts & Professional Repair",
+    title: "EPROX | Genuine Mobile Spare Parts, Repair Tools & Repair — Oman",
     description:
-      "EPROX provides high-quality mobile phone spare parts, professional repair services, technical diagnostics, and dependable supply solutions.",
+      "EPROX supplies genuine mobile spare parts and carefully selected high-quality alternatives, professional repair tools, and repair services for technicians, service centers, and retailers in Oman.",
   },
 };

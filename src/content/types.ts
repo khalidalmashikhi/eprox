@@ -93,8 +93,8 @@ export interface WhyContent {
   eyebrow: string;
   heading: string;
   statement: string;
-  primary: Benefit[];
-  supporting: Benefit[];
+  /** The four EPROX Advantage pillars. */
+  pillars: Benefit[];
 }
 
 export interface SignatureContent {

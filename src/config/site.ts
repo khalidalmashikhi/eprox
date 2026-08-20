@@ -1,8 +1,9 @@
 export const siteConfig = {
   name: "EPROX",
-  domain: "eprox.local",
-  // Update this to the real production URL before deploying.
-  url: "https://eprox.example.com",
+  domain: "eprox.net",
+  // Canonical production URL (Netlify). Single source of truth for
+  // metadataBase, canonical/hreflang, Open Graph, sitemap and robots.
+  url: "https://eprox.net",
   descriptorAr: "للحلول الفنية والتقنية",
   descriptorEn: "Technical & Technology Solutions",
   brandColor: "#540A09",

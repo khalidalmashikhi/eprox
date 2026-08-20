@@ -11,7 +11,7 @@ export const pagesEn: PagesDict = {
     titleLine1: "Premium Mobile",
     titleLine2: "Components.",
     intro:
-      "Every part we stock is chosen to a higher standard. From displays to the smallest IC, this is a catalogue built around quality — not quantity.",
+      "Genuine spare parts and carefully selected high-quality alternatives — from displays to the smallest IC. A catalogue built around quality, and around what a repair actually needs.",
     catalogueEyebrow: "The Catalogue",
     catalogueTitle: "Explore the component library.",
     categories: [
@@ -66,7 +66,7 @@ export const pagesEn: PagesDict = {
     expertise: [
       { title: "Board-level repair", text: "Micro-soldering and component-level diagnostics for faults others replace whole boards for." },
       { title: "Right tooling", text: "Proper equipment and consumables for clean, controlled, repeatable work." },
-      { title: "Quality parts", text: "The repair is only as good as the part — and ours are selected accordingly." },
+      { title: "The right part", text: "A repair is only as good as the part — genuine parts and quality alternatives, selected accordingly." },
       { title: "Data care", text: "Devices are handled respectfully, with care for what's inside them." },
     ],
     cta: {
@@ -87,18 +87,18 @@ export const pagesEn: PagesDict = {
     titleLine1: "Supply your shop",
     titleLine2: "with confidence.",
     intro:
-      "Built for repair centers and retailers who can't afford surprises. Consistent quality, dependable sourcing, and a team that answers — order after order.",
+      "Built for repair centers, technicians, and retailers who can't afford surprises — genuine parts and quality alternatives, professional tools, dependable sourcing, and a team that answers, order after order.",
     benefitsEyebrow: "Why partner with EPROX",
     benefitsTitle: "A supplier that behaves like a partner.",
     benefitsIntro:
       "The things that actually matter when parts are your business.",
     benefits: [
       { title: "Bulk supply", text: "Volume you can rely on, ready when your workflow needs it." },
-      { title: "Stable quality", text: "The same standard every batch — so your repairs stay consistent." },
-      { title: "Business support", text: "A team that understands repair operations and backs you up." },
+      { title: "Genuine & quality options", text: "Genuine parts and carefully selected high-quality alternatives, so you can match every repair." },
+      { title: "Professional tools", text: "Repair tools and supplies alongside the parts — one dependable source." },
+      { title: "Business support", text: "A team that understands repair operations and answers quickly." },
       { title: "Reliable sourcing", text: "Dependable supply lines that keep your shelves stocked." },
-      { title: "Fast communication", text: "Quick answers on availability, orders, and follow-ups." },
-      { title: "Flexible ordering", text: "Order sizes and mixes that fit how you actually work." },
+      { title: "Room to scale", text: "Flexible ordering and supply relationships that can grow with your business." },
     ],
     cta: {
       eyebrow: "For repair shops & retailers",
@@ -110,26 +110,34 @@ export const pagesEn: PagesDict = {
 
   about: {
     meta: {
-      title: "About — The EPROX Story | EPROX",
+      title: "About EPROX — Who We Are | EPROX",
       description:
-        "EPROX brings together high-quality components, technical expertise, and attention to detail. Our mission, values, craftsmanship, and quality philosophy.",
+        "EPROX specializes in the mobile phone and smart-device repair ecosystem: genuine spare parts, carefully selected high-quality alternatives, professional repair tools, and technical expertise. Our mission and vision.",
     },
     eyebrow: "About EPROX",
-    titleLine1: "Built around",
-    titleLine2: "quality.",
+    titleLine1: "Who we are,",
+    titleLine2: "and where we're going.",
     intro:
-      "EPROX exists for a simple belief: quality begins with the right part, continues through precise work, and ends with a customer who can trust the result.",
-    quote: "Every part matters. Every device deserves better.",
-    quoteAuthor: "EPROX",
-    blocksEyebrow: "What we stand for",
-    blocksTitle: "The principles behind the work.",
-    blocks: [
-      { label: "Mission", title: "Quality people can rely on.", text: "To deliver components and repairs that hold up — so every device we touch performs the way it should." },
-      { label: "Vision", title: "A trusted name in technology.", text: "To become the reference for mobile parts and repair — known for standards, not shortcuts." },
-      { label: "Values", title: "Honesty, precision, care.", text: "Clear communication, precise work, and genuine care for every device and every customer." },
-      { label: "Craftsmanship", title: "Detail at every stage.", text: "From selection to final inspection, the small things are treated as if they were the whole thing." },
-      { label: "Quality Philosophy", title: "The right part, first.", text: "Quality is a decision repeated at every step — not a claim made at the end." },
-      { label: "Technology", title: "Tools that match the work.", text: "Proper diagnostics and equipment, so capability keeps pace with the devices we service." },
+      "EPROX specializes in the mobile phone and smart-device repair ecosystem — combining genuine spare parts, carefully selected high-quality alternatives, professional repair tools, and hands-on technical expertise.",
+    storyEyebrow: "Who We Are",
+    storyTitle: "Built around the repair ecosystem.",
+    storyParagraphs: [
+      "EPROX specializes in the mobile phone and smart-device repair ecosystem, combining genuine spare parts, carefully selected high-quality alternatives, professional repair tools, and specialized technical expertise.",
+      "We carefully select our products around the real needs of technicians, service centers, and retailers — with a focus on quality, precise selection, and professional service.",
+      "Our hands-on experience in mobile hardware and repair gives us a practical understanding of what professionals need, from precision tools and spare parts to technical and supply solutions.",
+    ],
+    missionEyebrow: "Our Mission",
+    missionTitle: "Better repairs, made possible.",
+    missionParagraphs: [
+      "To empower technicians, service centers, and retailers with access to the right spare parts, professional tools, and technical expertise needed to achieve better repair outcomes.",
+      "Through careful product selection and support for the repair industry, we aim to extend device lifecycles, improve repair quality, and contribute to reducing electronic waste.",
+    ],
+    visionEyebrow: "Our Vision",
+    visionTitle: "From local roots to a global standard.",
+    visionParagraphs: [
+      "To become a leading and trusted name in the mobile phone and smart-device repair ecosystem — recognized by professionals for spare parts, repair tools, and specialized technical solutions.",
+      "We aspire to grow from our local presence into regional and international markets, developing an efficient supply and logistics network that serves technicians, service centers, retailers, and enterprises across multiple markets.",
+      "Our long-term ambition is for EPROX to become a recognized benchmark in the industry — known for careful product selection, integrity, technical expertise, and a commitment to the professionals who extend device lifecycles and keep people connected.",
     ],
     cta: {
       eyebrow: "Let's talk",

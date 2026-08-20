@@ -58,11 +58,18 @@ export interface AboutPage {
   titleLine1: string;
   titleLine2: string;
   intro: string;
-  quote: string;
-  quoteAuthor: string;
-  blocksEyebrow: string;
-  blocksTitle: string;
-  blocks: { label: string; title: string; text: string }[];
+  /** Who We Are — the company today. */
+  storyEyebrow: string;
+  storyTitle: string;
+  storyParagraphs: string[];
+  /** Our Mission — what EPROX does. */
+  missionEyebrow: string;
+  missionTitle: string;
+  missionParagraphs: string[];
+  /** Our Vision — future ambition (expressed as goals, not present facts). */
+  visionEyebrow: string;
+  visionTitle: string;
+  visionParagraphs: string[];
   cta: CtaBlock;
 }
 

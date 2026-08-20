@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MessageCircle, Phone, Mail } from "lucide-react";
+import { Phone, Mail, Instagram, Globe, type LucideIcon } from "lucide-react";
 import type { Dictionary } from "@/content";
-import { localePath, type Locale, type PageSegment } from "@/config/site";
-import { contactConfig, whatsappLink } from "@/config/contact";
+import { localePath, siteConfig, type Locale, type PageSegment } from "@/config/site";
+import { contactConfig, instagramDisplay, telHref, phoneLabel } from "@/config/contact";
 import { LanguageLink } from "@/components/navigation/LanguageLink";
 
 const navKeys: { seg: PageSegment; key: keyof Dictionary["nav"] }[] = [
@@ -23,11 +23,21 @@ export function Footer({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   const year = new Date().getFullYear();
   const c = contactConfig;
 
+  const igLabel = locale === "ar" ? "إنستغرام EPROX" : "EPROX on Instagram";
   const contactLinks = [
-    c.whatsapp && { key: "wa", label: dict.contact.whatsapp, href: whatsappLink(c.whatsapp), icon: MessageCircle, external: true },
-    c.phone && { key: "ph", label: c.phone, href: `tel:${c.phone.replace(/\s/g, "")}`, icon: Phone, external: false },
-    c.email && { key: "em", label: c.email, href: `mailto:${c.email}`, icon: Mail, external: false },
-  ].filter(Boolean) as { key: string; label: string; href: string; icon: typeof Mail; external: boolean }[];
+    ...c.phones.map((p, i) => ({
+      key: `ph${i}`,
+      role: phoneLabel(p, locale),
+      label: p.display,
+      href: telHref(p.number),
+      icon: Phone,
+      external: false,
+      ariaLabel: `${phoneLabel(p, locale)}: ${p.display}`,
+    })),
+    c.email && { key: "em", role: "", label: c.email, href: `mailto:${c.email}`, icon: Mail, external: false, ariaLabel: c.email },
+    { key: "web", role: "", label: siteConfig.domain, href: siteConfig.url, icon: Globe, external: true, ariaLabel: siteConfig.domain },
+    c.instagramUrl && { key: "ig", role: "", label: instagramDisplay, href: c.instagramUrl, icon: Instagram, external: true, ariaLabel: igLabel },
+  ].filter(Boolean) as { key: string; role: string; label: string; href: string; icon: LucideIcon; external: boolean; ariaLabel: string }[];
 
   return (
     <footer className="relative overflow-hidden bg-ink text-white">
@@ -88,11 +98,17 @@ export function Footer({ dict, locale }: { dict: Dictionary; locale: Locale }) {
                   <li key={l.key}>
                     <a
                       href={l.href}
+                      aria-label={l.ariaLabel}
                       {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                      className="inline-flex items-center gap-2 text-[0.92rem] text-white/70 transition-colors hover:text-white"
+                      className="group inline-flex items-start gap-2 text-white/70 transition-colors hover:text-white"
                     >
-                      <l.icon className="h-4 w-4 shrink-0 text-white/50" strokeWidth={1.7} />
-                      {l.label}
+                      <l.icon className="mt-0.5 h-4 w-4 shrink-0 text-white/50" strokeWidth={1.7} />
+                      <span className="leading-tight">
+                        {l.role ? (
+                          <span className="block text-[0.68rem] font-medium text-white/40">{l.role}</span>
+                        ) : null}
+                        <span dir="ltr" className="block text-[0.92rem]">{l.label}</span>
+                      </span>
                     </a>
                   </li>
                 ))}
